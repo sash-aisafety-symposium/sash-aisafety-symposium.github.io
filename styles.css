@@ -60,7 +60,12 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   color: var(--lav); text-decoration: none; font-family: var(--serif); font-size: 19px; font-weight: 500;
   line-height: 1.2;
 }
-.hero-logo-link { display: inline-block; margin-bottom: 28px; }
+.hero-presenter { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 28px; }
+.hero-logo-link { display: block; }
+.presents {
+  font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1;
+  color: var(--lav); opacity: .85; padding-bottom: 2px;
+}
 .hero-logo-link:hover { opacity: .8; }
 .hero-logo { height: 44px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 22px; }
@@ -232,6 +237,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   .container, .nav-inner { padding-left: 16px; padding-right: 16px; }
   .brand { font-size: 17px; }
   .hero-logo { height: 34px; }
+  .presents { font-size: 21px; }
   .section { padding: 64px 0; }
   .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
   .hero { padding: calc(var(--nav-h) + 40px) 0 56px; }
