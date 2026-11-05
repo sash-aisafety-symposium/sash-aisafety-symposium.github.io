@@ -63,7 +63,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .hero-presenter { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 28px; }
 .hero-logo-link { display: block; }
 .presents {
-  font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1;
+  font-family: var(--serif); font-size: 26px; line-height: 1;
   color: var(--lav); opacity: .85; padding-bottom: 2px;
 }
 .hero-logo-link:hover { opacity: .8; }
