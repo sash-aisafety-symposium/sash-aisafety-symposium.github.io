@@ -117,6 +117,17 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 }
 .formats .num { font-family: var(--serif); color: var(--accent); font-size: 22px; }
 
+/* Apply band */
+.apply-band { background: var(--accent); color: var(--lav); padding: 56px 0; }
+.apply-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.apply-text { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.btn-apply {
+  background: var(--lav); color: var(--navy);
+  font-size: 20px; font-weight: 600; padding: 18px 44px;
+  box-shadow: 0 10px 30px rgba(11, 4, 105, .35);
+}
+.btn-apply:hover { background: var(--white); transform: translateY(-1px); }
+
 /* Schedule */
 .tba {
   border: 1px dashed var(--accent); border-radius: var(--radius); background: var(--white);
