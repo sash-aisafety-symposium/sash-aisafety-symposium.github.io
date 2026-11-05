@@ -30,6 +30,11 @@
       toggle.setAttribute("aria-expanded", "false");
     })
   );
+  const navInner = header.querySelector(".nav-inner");
+  const setNavH = () => document.documentElement.style.setProperty("--nav-h", navInner.offsetHeight + "px");
+  setNavH();
+  window.addEventListener("resize", setNavH);
+  document.fonts && document.fonts.ready.then(setNavH);
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
