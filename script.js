@@ -35,7 +35,8 @@
   onScroll();
 
   /* Research cards */
-  document.getElementById("research-grid").innerHTML = RESEARCH.map((r) => {
+  const researchGrid = document.getElementById("research-grid");
+  if (researchGrid) researchGrid.innerHTML = RESEARCH.map((r) => {
     const tag = r.link ? "a" : "article";
     const attrs = r.link ? ` href="${esc(r.link)}" target="_blank" rel="noopener"` : "";
     return `<${tag} class="research-card${r.link ? " is-link" : ""}"${attrs}>
