@@ -76,17 +76,19 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .hero {
   position: relative; overflow: hidden;
   background: var(--navy); color: var(--lav);
-  min-height: 92vh; display: flex; align-items: center;
-  padding: 120px 0 80px;
+  display: flex; align-items: center;
+  padding: calc(var(--nav-h) + 64px) 0 72px;
 }
 .hero-lines {
   position: absolute; right: -4%; top: var(--nav-h); height: calc(100% - var(--nav-h)); width: 60%;
   color: var(--sky); opacity: .45;
 }
 .hero-content { position: relative; width: 100%; }
-.hero-logo-link { display: inline-block; margin-bottom: 18px; }
-.hero-logo { height: 40px; width: auto; }
-.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; font-weight: 500; color: var(--sky); margin: 0 0 20px; }
+.eyebrow {
+  display: inline-block; margin: 0 0 22px;
+  text-transform: uppercase; letter-spacing: .2em; font-size: 15px; font-weight: 600;
+  color: var(--navy); background: var(--sky); padding: 6px 14px; border-radius: 6px;
+}
 .hero h1 { font-size: clamp(40px, 6.4vw, 76px); max-width: 15ch; }
 .hero-sub { font-size: clamp(18px, 2vw, 21px); max-width: 38ch; margin: 24px 0 0; opacity: .9; }
 .hero-date {
@@ -219,6 +221,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .cta-band h2 { font-size: clamp(30px, 4vw, 44px); }
 .cta-band p { margin: 10px 0 0; opacity: .9; }
+.cta-band p a { color: var(--lav); text-underline-offset: 3px; }
 .footer { background: var(--navy); color: rgba(244, 242, 255, .8); padding: 48px 0; font-size: 14px; }
 .footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .footer p { margin: 0; }
@@ -244,11 +247,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   .container, .nav-inner { padding-left: 16px; padding-right: 16px; }
   .brand { font-size: 15px; gap: 10px; }
   .brand-logo { height: 18px; }
-  .hero-logo { height: 32px; }
   .brand-text { padding-left: 10px; }
   .section { padding: 64px 0; }
   .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
-  .hero { min-height: auto; padding: 120px 0 72px; }
+  .hero { padding: calc(var(--nav-h) + 40px) 0 56px; }
   .hero-lines { width: 100%; opacity: .2; }
   .about-body .lead { font-size: 22px; }
   .formats { grid-template-columns: repeat(2, 1fr); }
