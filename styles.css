@@ -219,6 +219,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .footer-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
 .footer-links a { color: var(--lav); text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; }
+.footer-contact { color: var(--lav); }
+.footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Responsive */
 @media (max-width: 1020px) {
