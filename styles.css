@@ -118,15 +118,15 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .formats .num { font-family: var(--serif); color: var(--accent); font-size: 22px; }
 
 /* Apply band */
-.apply-band { background: var(--accent); color: var(--lav); padding: 56px 0; }
+.apply-band { background: var(--lav); color: var(--navy); padding: 56px 0; }
 .apply-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-.apply-text { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.apply-text { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
 .btn-apply {
-  background: var(--lav); color: var(--navy);
+  background: var(--navy); color: var(--lav);
   font-size: 20px; font-weight: 600; padding: 18px 44px;
-  box-shadow: 0 10px 30px rgba(11, 4, 105, .35);
+  box-shadow: 0 10px 30px rgba(11, 4, 105, .25);
 }
-.btn-apply:hover { background: var(--white); transform: translateY(-1px); }
+.btn-apply:hover { background: var(--accent); transform: translateY(-1px); }
 
 /* Schedule */
 .tba {
