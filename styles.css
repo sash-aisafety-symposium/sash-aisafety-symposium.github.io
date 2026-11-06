@@ -154,7 +154,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .more { font-size: 14px; color: var(--accent); font-weight: 500; white-space: nowrap; }
 
 /* Speakers */
-.speaker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+.speaker-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
 .speaker {
   background: none; border: 0; padding: 0; text-align: left; cursor: pointer; font: inherit; color: inherit;
   display: flex; flex-direction: column;

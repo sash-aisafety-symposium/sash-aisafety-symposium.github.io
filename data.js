@@ -27,7 +27,7 @@ const RESEARCH = Array.from({ length: 18 }, (_, i) => ({
 /* Speakers.
    photo: image URL or path (e.g. "images/jane.jpg"). Leave "" to show initials.
    links: any of website / linkedin / github / x / scholar. */
-const SPEAKERS = Array.from({ length: 6 }, (_, i) => ({
+const SPEAKERS = Array.from({ length: 5 }, (_, i) => ({
   name: `Speaker Name ${i + 1}`,
   title: "Title",
   organisation: "Organisation",
