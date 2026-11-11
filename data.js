@@ -4,8 +4,7 @@
 ------------------------------------------------------------------- */
 
 const SITE = {
-  // TODO: replace with the real Luma event URL
-  lumaUrl: "https://lu.ma/",
+  lumaUrl: "https://luma.com/tivp43yk",
   contactEmail: "sash.aisafety.symposium@gmail.com",
   website: "https://www.aisafety.sg/",
   linkedin: "https://www.linkedin.com/company/singapore-ai-safety-hub/",
