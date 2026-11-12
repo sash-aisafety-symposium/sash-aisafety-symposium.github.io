@@ -127,6 +127,15 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .btn-apply:hover { background: var(--accent); transform: translateY(-1px); }
 
 /* Schedule */
+.schedule-note {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 20px;
+  padding: 12px 18px; border-radius: 12px; background: var(--lav);
+  color: #3a3850; font-size: 15px;
+}
+.schedule-note::before {
+  content: "i"; flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); color: var(--white); font: 600 13px/1 var(--serif); font-style: italic;
+}
 .schedule {
   list-style: none; margin: 0; padding: 0; background: var(--white);
   border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
