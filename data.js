@@ -26,13 +26,17 @@ const RESEARCH = Array.from({ length: 18 }, (_, i) => ({
 /* Speakers.
    photo: image URL or path (e.g. "images/jane.jpg"). Leave "" to show initials.
    links: any of website / linkedin / github / x / scholar. */
-const SPEAKERS = Array.from({ length: 5 }, (_, i) => ({
-  name: `Speaker Name ${i + 1}`,
-  title: "Title",
-  organisation: "Organisation",
-  photo: "",
-  links: { website: "", linkedin: "", github: "" },
-  bio: "Short speaker bio goes here. Two or three sentences on their background, current work and research interests.",
-  talkTitle: "Talk title",
-  talkDescription: "A short description of the talk goes here.",
+const SPEAKERS = [
+  { name: "Jess Bergs", title: "Engineering Lead", organisation: "UK AI Security Institute", photo: "images/speakers/jess-bergs.jpg" },
+  { name: "Zhengyuan Liu", title: "Team Lead", organisation: "A*STAR Centre for Frontier AI Research", photo: "" },
+  { name: "Lukas Struppek", title: "Research Scientist", organisation: "FAR.AI", photo: "images/speakers/lukas-struppek.jpg" },
+  { name: "Shaun Khoo", title: "Staff Data Scientist", organisation: "GovTech Singapore", photo: "images/speakers/shaun-khoo.jpg" },
+  { name: "Tan Zhi Xuan", title: "Assistant Professor", organisation: "NUS Department of Computer Science", photo: "images/speakers/tan-zhi-xuan.jpg" },
+].map((s) => ({
+  // TODO: replace placeholder bio and talk details for each speaker
+  links: {},
+  bio: "Speaker bio coming soon.",
+  talkTitle: "Talk title to be announced",
+  talkDescription: "Talk details will be shared closer to the event.",
+  ...s,
 }));

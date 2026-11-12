@@ -67,7 +67,7 @@
     (s, i) => `<button class="speaker" data-i="${i}">
       ${photo(s, "speaker-photo")}
       <span class="speaker-name">${esc(s.name)}</span>
-      <span class="speaker-org">${esc(s.organisation)}</span>
+      <span class="speaker-org">${esc(s.title)} at ${esc(s.organisation)}</span>
     </button>`
   ).join("");
 
