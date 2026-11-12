@@ -88,7 +88,10 @@
           ${links.length ? `<p class="modal-links">${links.map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${LINK_LABELS[k] || esc(k)}</a>`).join("")}</p>` : ""}
         </div>
       </div>
-      <p class="modal-bio">${esc(s.bio)}</p>
+      <div class="modal-about">
+        <p class="label">About</p>
+        <p>${esc(s.bio)}</p>
+      </div>
       <div class="modal-talk">
         <p class="label">Talk</p>
         <h4>${esc(s.talkTitle)}</h4>

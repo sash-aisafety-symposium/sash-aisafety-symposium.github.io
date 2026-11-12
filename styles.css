@@ -180,18 +180,25 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .modal-body { padding: 36px; }
 .modal-close {
   position: absolute; top: 12px; right: 14px; border: 0; background: none; font-size: 30px; line-height: 1;
-  color: var(--muted); cursor: pointer; padding: 4px 8px;
+  color: var(--lav); opacity: .8; cursor: pointer; padding: 4px 8px; z-index: 1;
 }
-.modal-close:hover { color: var(--ink); }
-.modal-top { display: flex; gap: 20px; align-items: center; margin-bottom: 22px; padding-right: 24px; }
+.modal-close:hover { opacity: 1; color: var(--white); }
+.modal-top {
+  display: flex; gap: 20px; align-items: center;
+  margin: -36px -36px 26px; padding: 32px 56px 32px 36px;
+  background: var(--navy); color: var(--lav);
+  background-image: radial-gradient(circle at 90% 10%, rgba(106, 138, 252, .35), transparent 60%);
+}
 .modal-photo { width: 104px; height: 104px; flex: none; border-radius: 14px; object-fit: cover; }
 .modal-photo.initials { font-size: 34px; }
-.modal-top h3 { font-size: 30px; color: var(--navy); }
-.modal-role { margin: 4px 0 0; color: var(--muted); }
+.modal-top h3 { font-size: 30px; color: var(--white); }
+.modal-role { margin: 6px 0 0; color: #d6d2ff; font-size: 16px; font-weight: 500; }
+.modal-links a { color: #b9c8ff; }
 .modal-links { margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; font-weight: 500; }
-.modal-bio { margin: 0 0 24px; }
+.modal-about { margin: 0 0 24px; padding: 0 2px; }
+.modal-about p:last-child { margin: 0; }
 .modal-talk { background: var(--lav); border-radius: 14px; padding: 20px 22px; }
-.modal-talk .label { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; color: var(--accent); }
+.modal-about .label, .modal-talk .label { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; color: var(--accent); }
 .modal-talk h4 { font-size: 22px; color: var(--navy); margin-bottom: 8px; }
 .modal-talk p:last-child { margin: 0; }
 
@@ -258,6 +265,6 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   .speaker-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .venue { grid-template-columns: 1fr; }
   .modal-body { padding: 28px 22px; }
-  .modal-top { flex-direction: column; align-items: flex-start; }
+  .modal-top { flex-direction: column; align-items: flex-start; margin: -28px -22px 22px; padding: 28px 48px 26px 22px; }
   .faq summary { font-size: 19px; }
 }
