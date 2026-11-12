@@ -66,9 +66,12 @@
       : `<span class="slot-avatar${isPlaceholder ? " is-placeholder" : ""}" aria-hidden="true">${
           isPlaceholder ? PERSON_ICON : esc(name.split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase())
         }</span>`;
-    return `<div class="slot-speaker${isPlaceholder ? " is-placeholder" : ""}">${avatar}<span class="slot-speaker-text"><span class="slot-speaker-name">${esc(name)}</span>${
+    const inner = `${avatar}<span class="slot-speaker-text"><span class="slot-speaker-name">${esc(name)}</span>${
       sp && sp.organisation ? `<span class="slot-speaker-org">${esc(sp.organisation)}</span>` : ""
-    }</span></div>`;
+    }</span>`;
+    return sp
+      ? `<button type="button" class="slot-speaker is-link" data-i="${SPEAKERS.indexOf(sp)}" aria-label="About ${esc(name)}">${inner}</button>`
+      : `<div class="slot-speaker${isPlaceholder ? " is-placeholder" : ""}">${inner}</div>`;
   };
   const scheduleList = document.getElementById("schedule-list");
   if (scheduleList && typeof SCHEDULE !== "undefined") scheduleList.innerHTML = SCHEDULE.map(
@@ -101,10 +104,9 @@
   const LINK_LABELS = { website: "Website", linkedin: "LinkedIn", github: "GitHub", x: "X", scholar: "Google Scholar" };
   const modal = document.getElementById("speaker-modal");
   const body = document.getElementById("modal-body");
-  grid.addEventListener("click", (e) => {
-    const btn = e.target.closest(".speaker");
-    if (!btn) return;
-    const s = SPEAKERS[+btn.dataset.i];
+  const openSpeaker = (i) => {
+    const s = SPEAKERS[i];
+    if (!s) return;
     const links = Object.entries(s.links || {}).filter(([, v]) => v);
     body.innerHTML = `
       <div class="modal-top">
@@ -125,6 +127,14 @@
         <p>${esc(s.talkDescription)}</p>
       </div>`;
     modal.showModal();
+  };
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest(".speaker");
+    if (btn) openSpeaker(+btn.dataset.i);
+  });
+  if (scheduleList) scheduleList.addEventListener("click", (e) => {
+    const btn = e.target.closest(".slot-speaker.is-link");
+    if (btn) openSpeaker(+btn.dataset.i);
   });
   modal.querySelector(".modal-close").addEventListener("click", () => modal.close());
   modal.addEventListener("click", (e) => {

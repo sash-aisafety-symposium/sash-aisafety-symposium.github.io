@@ -48,7 +48,7 @@ const SPEAKERS = [
    and organisation are filled in automatically. Leave out for no speaker. */
 const SCHEDULE = [
   { start: "9:30am", end: "10:00am", title: "Registration", kind: "break" },
-  { start: "10:00am", end: "10:15am", title: "Welcome talk by SASH", detail: "About our fellowship and the research symposium", kind: "session", speaker: "SASH" },
+  { start: "10:00am", end: "10:15am", title: "Welcome talk by SASH", detail: "About our fellowship and the research symposium", kind: "session" },
   { start: "10:15am", end: "10:30am", title: "Singapore\u2019s role in the global AI safety ecosystem", kind: "session", speaker: "Speaker TBC" },
   { start: "10:30am", end: "11:00am", title: "First Talk", kind: "talk", speaker: "Speaker 1" },
   { start: "11:00am", end: "11:30am", title: "Second Talk", kind: "talk", speaker: "Speaker 2" },
