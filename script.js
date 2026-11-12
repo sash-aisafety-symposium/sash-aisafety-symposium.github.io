@@ -55,6 +55,20 @@
     </${tag}>`;
   }).join("");
 
+  /* Schedule */
+  const KIND_LABELS = { talk: "Talk", fellows: "Fellows", session: "Plenary", break: "Break" };
+  const scheduleList = document.getElementById("schedule-list");
+  if (scheduleList && typeof SCHEDULE !== "undefined") scheduleList.innerHTML = SCHEDULE.map(
+    (x) => `<li class="slot slot-${esc(x.kind)}">
+      <p class="slot-time"><span class="slot-start">${esc(x.start)}</span><span class="slot-end">\u2013 ${esc(x.end)}</span></p>
+      <div class="slot-main">
+        <p class="slot-title">${esc(x.title)}</p>
+        ${x.detail ? `<p class="slot-detail">${esc(x.detail)}</p>` : ""}
+      </div>
+      <span class="slot-kind">${esc(x.label || KIND_LABELS[x.kind] || "")}</span>
+    </li>`
+  ).join("");
+
   /* Speakers */
   const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   const photo = (s, cls) =>
