@@ -42,21 +42,23 @@ const SPEAKERS = [
 }));
 
 /* Schedule.
-   kind: "talk" | "fellows" | "session" | "break" (controls the label and styling).
-   detail: optional second line under the title. */
+   kind: "talk" | "fellows" | "session" | "break" (controls styling).
+   detail: optional second line under the title.
+   speaker: shown on the right. If it matches a name in SPEAKERS above, their photo
+   and organisation are filled in automatically. Leave out for no speaker. */
 const SCHEDULE = [
-  { start: "9:30am", end: "10:00am", title: "Registration", kind: "break", label: "Arrival" },
-  { start: "10:00am", end: "10:15am", title: "Welcome talk by SASH", detail: "About our fellowship and the research symposium", kind: "session" },
-  { start: "10:15am", end: "10:30am", title: "Singapore\u2019s role in the global AI safety ecosystem", kind: "session" },
-  { start: "10:30am", end: "11:00am", title: "First Talk", kind: "talk" },
-  { start: "11:00am", end: "11:30am", title: "Second Talk", kind: "talk" },
-  { start: "11:30am", end: "12:00pm", title: "Third Talk", kind: "talk" },
+  { start: "9:30am", end: "10:00am", title: "Registration", kind: "break" },
+  { start: "10:00am", end: "10:15am", title: "Welcome talk by SASH", detail: "About our fellowship and the research symposium", kind: "session", speaker: "SASH" },
+  { start: "10:15am", end: "10:30am", title: "Singapore\u2019s role in the global AI safety ecosystem", kind: "session", speaker: "Speaker TBC" },
+  { start: "10:30am", end: "11:00am", title: "First Talk", kind: "talk", speaker: "Speaker 1" },
+  { start: "11:00am", end: "11:30am", title: "Second Talk", kind: "talk", speaker: "Speaker 2" },
+  { start: "11:30am", end: "12:00pm", title: "Third Talk", kind: "talk", speaker: "Speaker 3" },
   { start: "12:00pm", end: "1:00pm", title: "Lunch + Poster session", kind: "break" },
   { start: "1:00pm", end: "2:00pm", title: "Fellows\u2019 Research Presentations", kind: "fellows" },
   { start: "2:00pm", end: "3:00pm", title: "Fellows\u2019 Research Presentations", kind: "fellows" },
   { start: "3:00pm", end: "4:00pm", title: "Coffee break + Poster session", kind: "break" },
-  { start: "4:00pm", end: "4:30pm", title: "Fourth Talk", kind: "talk" },
-  { start: "4:30pm", end: "5:00pm", title: "Fifth Talk", kind: "talk" },
-  { start: "5:00pm", end: "5:30pm", title: "Sixth Talk", kind: "talk" },
+  { start: "4:00pm", end: "4:30pm", title: "Fourth Talk", kind: "talk", speaker: "Speaker 4" },
+  { start: "4:30pm", end: "5:00pm", title: "Fifth Talk", kind: "talk", speaker: "Speaker 5" },
+  { start: "5:00pm", end: "5:30pm", title: "Sixth Talk", kind: "talk", speaker: "Speaker 6" },
   { start: "5:30pm", end: "6:00pm", title: "Closing remarks and photo taking", kind: "session" },
 ];

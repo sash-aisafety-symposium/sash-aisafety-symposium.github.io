@@ -56,16 +56,29 @@
   }).join("");
 
   /* Schedule */
-  const KIND_LABELS = { talk: "Talk", fellows: "Fellows", session: "Plenary", break: "Break" };
+  const PERSON_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/></svg>';
+  const speakerChip = (name) => {
+    if (!name) return "";
+    const sp = (typeof SPEAKERS !== "undefined" ? SPEAKERS : []).find((s) => s.name === name);
+    const isPlaceholder = !sp && /^speaker\b/i.test(name);
+    const avatar = sp && sp.photo
+      ? `<img class="slot-avatar" src="${esc(sp.photo)}" alt="">`
+      : `<span class="slot-avatar${isPlaceholder ? " is-placeholder" : ""}" aria-hidden="true">${
+          isPlaceholder ? PERSON_ICON : esc(name.split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase())
+        }</span>`;
+    return `<div class="slot-speaker${isPlaceholder ? " is-placeholder" : ""}">${avatar}<span class="slot-speaker-text"><span class="slot-speaker-name">${esc(name)}</span>${
+      sp && sp.organisation ? `<span class="slot-speaker-org">${esc(sp.organisation)}</span>` : ""
+    }</span></div>`;
+  };
   const scheduleList = document.getElementById("schedule-list");
   if (scheduleList && typeof SCHEDULE !== "undefined") scheduleList.innerHTML = SCHEDULE.map(
     (x) => `<li class="slot slot-${esc(x.kind)}">
-      <p class="slot-time"><span class="slot-start">${esc(x.start)}</span><span class="slot-end">\u2013 ${esc(x.end)}</span></p>
+      <p class="slot-time">${esc(x.start)} \u2013 ${esc(x.end)}</p>
       <div class="slot-main">
         <p class="slot-title">${esc(x.title)}</p>
         ${x.detail ? `<p class="slot-detail">${esc(x.detail)}</p>` : ""}
       </div>
-      <span class="slot-kind">${esc(x.label || KIND_LABELS[x.kind] || "")}</span>
+      ${speakerChip(x.speaker)}
     </li>`
   ).join("");
 
