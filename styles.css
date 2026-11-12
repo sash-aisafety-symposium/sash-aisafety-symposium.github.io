@@ -202,7 +202,7 @@ button.slot-speaker:hover .slot-speaker-name { text-decoration: underline; text-
 
 .speaker-modal {
   border: 0; border-radius: 20px; padding: 0; width: min(640px, calc(100vw - 32px));
-  max-height: calc(100vh - 48px); color: var(--ink);
+  max-height: calc(100vh - 48px); color: var(--ink); background: var(--white);
 }
 .speaker-modal::backdrop { background: rgba(11, 4, 105, .55); backdrop-filter: blur(3px); }
 .modal-body { padding: 36px; }
@@ -229,6 +229,18 @@ button.slot-speaker:hover .slot-speaker-name { text-decoration: underline; text-
 .modal-about .label, .modal-talk .label { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 600; color: var(--accent); }
 .modal-talk h4 { font-size: 22px; color: var(--navy); margin-bottom: 8px; }
 .modal-talk p:last-child { margin: 0; }
+
+/* Speaker pop-up in dark mode: a deliberate dark palette instead of the browser's own darkening */
+@media (prefers-color-scheme: dark) {
+  .speaker-modal { background: #13103a; color: #e9e7ff; color-scheme: dark; }
+  .speaker-modal::backdrop { background: rgba(4, 2, 30, .7); }
+  .modal-top { background-color: #0b0469; border-bottom: 1px solid rgba(106, 138, 252, .25); }
+  .modal-about .label, .modal-talk .label { color: #9fb4ff; }
+  .modal-about p { color: #e9e7ff; }
+  .modal-talk { background: #1f1a55; }
+  .modal-talk h4 { color: #ffffff; }
+  .modal-talk p { color: #d6d2ff; }
+}
 
 /* Venue */
 .venue { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: stretch; }
