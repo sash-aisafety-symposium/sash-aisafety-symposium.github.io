@@ -143,7 +143,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .slot { -webkit-tap-highlight-color: transparent; }
 .slot p { margin: 0; }
 .slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 500; color: #2b2940; font-size: 15px; letter-spacing: .01em; }
-.slot-title { font-family: var(--serif); font-size: 22px; line-height: 1.25; color: var(--navy); }
+.slot-title { font-family: var(--sans); font-size: 17px; font-weight: 500; line-height: 1.4; color: #3a3850; }
 .slot-detail { margin-top: 4px !important; color: var(--muted); font-size: 15px; }
 .slot-speaker { justify-self: start; display: flex; align-items: center; gap: 10px; min-width: 0; max-width: 260px; }
 .slot-avatar {
@@ -160,7 +160,6 @@ button.slot-speaker { background: none; border: 0; padding: 4px 8px 4px 4px; mar
 button.slot-speaker:hover, button.slot-speaker:focus-visible { background: var(--lav); }
 button.slot-speaker:hover .slot-speaker-name { text-decoration: underline; text-underline-offset: 3px; }
 .slot-break { background: var(--lav); }
-.slot-break .slot-title { font-family: var(--sans); font-size: 17px; font-weight: 500; color: #3a3850; }
 
 /* Research */
 .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -309,6 +308,5 @@ button.slot-speaker:hover .slot-speaker-name { text-decoration: underline; text-
   .faq summary { font-size: 19px; }
   .slot { grid-template-columns: 1fr; padding: 16px 18px; }
   .slot-speaker { justify-self: start; margin-top: 4px; }
-  .slot-title { font-size: 20px; }
-  .slot-break .slot-title { font-size: 16px; }
+  .slot-title { font-size: 16px; }
 }
