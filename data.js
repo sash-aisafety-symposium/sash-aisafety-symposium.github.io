@@ -25,11 +25,12 @@ const RESEARCH = Array.from({ length: 18 }, (_, i) => ({
 
 /* Speakers.
    photo: image URL or path (e.g. "images/jane.jpg"). Leave "" to show initials.
-   links: any of website / linkedin / github / x / scholar. */
+   links: any of website / linkedin / github / x / scholar.
+   role: optional; replaces the "title at organisation" line under the name. */
 const SPEAKERS = [
   { name: "Jess Bergs", title: "Engineering Lead", organisation: "UK AI Security Institute", photo: "images/speakers/jess-bergs.jpg" },
   { name: "Zhengyuan Liu", title: "Team Lead", organisation: "A*STAR Centre for Frontier AI Research", photo: "images/speakers/zhengyuan-liu.jpg" },
-  { name: "Lukas Struppek", title: "Research Scientist", organisation: "FAR.AI", photo: "images/speakers/lukas-struppek.jpg" },
+  { name: "Lukas Struppek", title: "Research Scientist", organisation: "FAR.AI", role: "Research Scientist at FAR.AI and mentor of SASH Fellowship", photo: "images/speakers/lukas-struppek.jpg" },
   { name: "Shaun Khoo", title: "Staff Data Scientist", organisation: "GovTech Singapore", photo: "images/speakers/shaun-khoo.jpg" },
   { name: "Tan Zhi Xuan", title: "Assistant Professor", organisation: "NUS Department of Computer Science", photo: "images/speakers/tan-zhi-xuan.jpg" },
 ].map((s) => ({

@@ -85,6 +85,7 @@
     </li>`
   ).join("");
 
+  const roleLine = (s) => s.role || `${s.title} at ${s.organisation}`;
   /* Speakers */
   const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   const photo = (s, cls) =>
@@ -97,7 +98,7 @@
     (s, i) => `<button class="speaker" data-i="${i}">
       ${photo(s, "speaker-photo")}
       <span class="speaker-name">${esc(s.name)}</span>
-      <span class="speaker-org">${esc(s.title)} at ${esc(s.organisation)}</span>
+      <span class="speaker-org">${esc(roleLine(s))}</span>
     </button>`
   ).join("");
 
@@ -113,7 +114,7 @@
         ${photo(s, "modal-photo")}
         <div>
           <h3 id="modal-name">${esc(s.name)}</h3>
-          <p class="modal-role">${esc(s.title)} at ${esc(s.organisation)}</p>
+          <p class="modal-role">${esc(roleLine(s))}</p>
           ${links.length ? `<p class="modal-links">${links.map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${LINK_LABELS[k] || esc(k)}</a>`).join("")}</p>` : ""}
         </div>
       </div>
