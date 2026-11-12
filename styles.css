@@ -127,23 +127,25 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .btn-apply:hover { background: var(--accent); transform: translateY(-1px); }
 
 /* Schedule */
-.schedule { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.schedule {
+  list-style: none; margin: 0; padding: 0; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 4, 105, .06);
+}
 .slot {
   display: grid; grid-template-columns: 190px 1fr auto; gap: 8px 28px; align-items: center;
-  padding: 20px 20px; border-bottom: 1px solid var(--line);
+  padding: 20px 28px; border-bottom: 1px solid var(--line); transition: background .15s;
 }
+.slot:last-child { border-bottom: 0; }
+.slot:not(.slot-break):hover { background: #faf9ff; }
 .slot p { margin: 0; }
-.slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.slot-start { font-weight: 600; color: var(--navy); font-size: 17px; }
-.slot-end { color: var(--muted); font-size: 15px; }
+.slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; color: var(--navy); font-size: 16px; }
 .slot-title { font-family: var(--serif); font-size: 22px; line-height: 1.25; color: var(--navy); }
 .slot-detail { margin-top: 4px !important; color: var(--muted); font-size: 15px; }
 .slot-kind {
   justify-self: end; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
   padding: 5px 12px; border-radius: 999px; background: var(--lav); color: var(--accent);
 }
-.slot-talk { box-shadow: inset 3px 0 0 var(--accent); }
-.slot-fellows { box-shadow: inset 3px 0 0 var(--sky); }
 .slot-fellows .slot-kind { background: var(--navy); color: var(--lav); }
 .slot-break { background: var(--lav); }
 .slot-break .slot-title { font-family: var(--sans); font-size: 17px; font-weight: 500; color: #3a3850; }
@@ -282,7 +284,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   .modal-body { padding: 28px 22px; }
   .modal-top { flex-direction: column; align-items: flex-start; margin: -28px -22px 22px; padding: 28px 48px 26px 22px; }
   .faq summary { font-size: 19px; }
-  .slot { grid-template-columns: 1fr auto; padding: 16px 14px; }
+  .slot { grid-template-columns: 1fr auto; padding: 16px 18px; }
   .slot-time { grid-column: 1; }
   .slot-kind { grid-column: 2; grid-row: 1; }
   .slot-main { grid-column: 1 / -1; }
