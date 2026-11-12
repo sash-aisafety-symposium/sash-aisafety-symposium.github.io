@@ -137,7 +137,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
   padding: 20px 28px; border-bottom: 1px solid var(--line); transition: background .15s;
 }
 .slot:last-child { border-bottom: 0; }
-.slot:not(.slot-break):hover { background: #faf9ff; }
+@media (hover: hover) and (pointer: fine) {
+  .slot:not(.slot-break):hover { background: #faf9ff; }
+}
+.slot { -webkit-tap-highlight-color: transparent; }
 .slot p { margin: 0; }
 .slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 500; color: #2b2940; font-size: 15px; letter-spacing: .01em; }
 .slot-title { font-family: var(--serif); font-size: 22px; line-height: 1.25; color: var(--navy); }
