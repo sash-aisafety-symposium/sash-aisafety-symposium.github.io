@@ -139,7 +139,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.1; 
 .slot:last-child { border-bottom: 0; }
 .slot:not(.slot-break):hover { background: #faf9ff; }
 .slot p { margin: 0; }
-.slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; color: var(--navy); font-size: 16px; }
+.slot-time { display: flex; align-items: baseline; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 500; color: #2b2940; font-size: 15px; letter-spacing: .01em; }
 .slot-title { font-family: var(--serif); font-size: 22px; line-height: 1.25; color: var(--navy); }
 .slot-detail { margin-top: 4px !important; color: var(--muted); font-size: 15px; }
 .slot-speaker { justify-self: start; display: flex; align-items: center; gap: 10px; min-width: 0; max-width: 260px; }
