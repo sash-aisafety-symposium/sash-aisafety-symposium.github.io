@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Symposium Agenda Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0b0469; --accent:#2920be; --sky:#6a8afc; --lav:#f4f2ff; --lav2:#e9e6fb;
+    --ink:#11101a; --muted:#5b5874; --line:#dcd8f0;
+    --serif:"Newsreader",Georgia,serif; --sans:"Instrument Sans",system-ui,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1240px; height:1754px; }
+  body { font-family:var(--sans); color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+  .poster { width:1240px; height:1754px; display:flex; flex-direction:column; overflow:hidden; }
+
+  /* Header */
+  header { position:relative; background:var(--navy); color:var(--lav); padding:76px 84px 64px; overflow:hidden; }
+  .lines { position:absolute; right:-70px; top:-30px; width:640px; height:640px; color:var(--sky); opacity:.42; }
+  .presenter { position:relative; display:flex; align-items:flex-end; gap:16px; margin-bottom:40px; }
+  .presenter img { height:50px; }
+  .presenter span { font-family:var(--serif); font-size:29px; line-height:1; opacity:.85; padding-bottom:2px; }
+  h1 { position:relative; font-family:var(--serif); font-weight:500; font-size:78px; line-height:1.02; letter-spacing:-.015em; max-width:16ch; }
+  .meta { position:relative; display:flex; gap:14px; margin-top:40px; flex-wrap:wrap; }
+  .pill { font-size:17px; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+          padding:11px 20px; border:1.5px solid rgba(244,242,255,.4); border-radius:999px; }
+  .pill.solid { background:var(--lav); color:var(--navy); border-color:var(--lav); }
+
+  /* Programme */
+  main { flex:1; padding:52px 84px 0; display:flex; flex-direction:column; }
+  .eyebrow { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:22px; }
+  .eyebrow h2 { font-family:var(--serif); font-weight:500; font-size:44px; color:var(--navy); letter-spacing:-.01em; }
+  .eyebrow p { font-size:16px; color:var(--muted); }
+  ol { list-style:none; flex:1; display:flex; flex-direction:column; border-top:2px solid var(--navy); }
+  li { display:grid; grid-template-columns:200px 1fr 300px; column-gap:28px; align-items:center;
+       padding:0 22px; border-bottom:1px solid var(--line); flex:1 1 0; min-height:0; }
+  li.tall { flex:2.35 1 0; }
+  li.break { background:var(--lav); }
+  .time { font-size:21px; font-weight:600; color:var(--navy); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .time small { font-size:15px; font-weight:500; color:var(--muted); margin-left:3px; }
+  .title { font-family:var(--serif); font-size:28px; font-weight:500; line-height:1.15; letter-spacing:-.005em; }
+  .detail { font-size:16.5px; color:var(--muted); margin-top:5px; line-height:1.35; }
+  .tag { display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+         color:var(--accent); margin-bottom:6px; }
+  .who { display:flex; flex-direction:column; gap:12px; }
+  .sp { display:flex; align-items:center; gap:14px; }
+  .sp img { width:58px; height:58px; border-radius:50%; object-fit:cover; flex:none; box-shadow:0 0 0 2px #fff, 0 0 0 3.5px var(--lav2); }
+  .sp b { display:block; font-size:18px; font-weight:600; line-height:1.2; }
+  .sp i { display:block; font-style:normal; font-size:15px; color:var(--muted); line-height:1.25; margin-top:2px; }
+  .tall .sp img { width:52px; height:52px; }
+
+  footer { margin-top:auto; padding:30px 84px 34px; display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }
+  footer .venue b { display:block; font-family:var(--serif); font-weight:500; font-size:25px; color:var(--navy); }
+  footer .venue span { display:block; font-size:16px; color:var(--muted); margin-top:4px; }
+  footer .org { text-align:right; font-size:16px; color:var(--muted); line-height:1.5; }
+  footer .org a { display:block; font-size:20px; font-weight:600; color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <header>
+    <svg class="lines" viewBox="0 0 600 600" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M120 -10 V180 Q120 240 180 240 H420 Q480 240 480 300 V610"/>
+        <path d="M132 -10 V180 Q132 228 180 228 H420 Q492 228 492 300 V610"/>
+        <path d="M144 -10 V180 Q144 216 180 216 H420 Q504 216 504 300 V610"/>
+        <path d="M156 -10 V180 Q156 204 180 204 H420 Q516 204 516 300 V610"/>
+        <path d="M610 380 H300 Q240 380 240 440 V610"/>
+        <path d="M610 392 H300 Q252 392 252 440 V610"/>
+        <path d="M610 404 H300 Q264 404 264 440 V610"/>
+        <path d="M610 416 H300 Q276 416 276 440 V610"/>
+        <path d="M330 -10 V90 Q330 130 370 130 H610"/>
+        <path d="M342 -10 V90 Q342 118 370 118 H610"/>
+        <path d="M354 -10 V90 Q354 106 370 106 H610"/>
+      </g>
+    </svg>
+    <div class="presenter"><img src="../images/sash-logo.png" alt="SASH"><span>presents</span></div>
+    <h1>Singapore AI Safety Research Symposium 2026</h1>
+    <div class="meta">
+      <span class="pill solid">Thursday 3 December 2026</span>
+      <span class="pill">12pm – 6pm</span>
+      <span class="pill">Lorong AI, one-north</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow"><h2>Programme</h2><p>All times in Singapore Time (UTC+8)</p></div>
+    <ol>
+      <li class="break">
+        <div class="time">12:00 – 1:00<small>pm</small></div>
+        <div><div class="title">AI Safety Research Showcase &amp; Networking Lunch</div></div>
+        <div></div>
+      </li>
+      <li>
+        <div class="time">1:00 – 1:15<small>pm</small></div>
+        <div><div class="title">Welcome + Singapore’s role in the global ecosystem</div></div>
+        <div></div>
+      </li>
+      <li>
+        <div class="time">1:15 – 2:15<small>pm</small></div>
+        <div><div class="title">Spotlight Sessions</div><div class="detail">4 × 15-minute research spotlights</div></div>
+        <div></div>
+      </li>
+      <li>
+        <div class="time">2:15 – 2:45<small>pm</small></div>
+        <div><span class="tag">Invited talk</span><div class="title">Talk by Lukas Struppek</div></div>
+        <div class="who"><div class="sp"><img src="../images/speakers/lukas-struppek.jpg" alt=""><div><b>Lukas Struppek</b><i>FAR.AI</i></div></div></div>
+      </li>
+      <li>
+        <div class="time">2:45 – 3:15<small>pm</small></div>
+        <div><span class="tag">Invited talk</span><div class="title">Talk by Jess Bergs</div></div>
+        <div class="who"><div class="sp"><img src="../images/speakers/jess-bergs.jpg" alt=""><div><b>Jess Bergs</b><i>UK AI Security Institute</i></div></div></div>
+      </li>
+      <li class="break">
+        <div class="time">3:15 – 4:00<small>pm</small></div>
+        <div><div class="title">AI Safety Research Showcase &amp; Networking Coffee Break</div></div>
+        <div></div>
+      </li>
+      <li class="tall">
+        <div class="time">4:00 – 5:00<small>pm</small></div>
+        <div><span class="tag">Presentations + Panel</span><div class="title">AI Safety Research in Singapore</div>
+          <div class="detail">Presentations from three Singapore research groups, followed by a 30-minute panel discussion</div></div>
+        <div class="who">
+          <div class="sp"><img src="../images/speakers/shaun-khoo.jpg" alt=""><div><b>Shaun Khoo</b><i>GovTech</i></div></div>
+          <div class="sp"><img src="../images/speakers/tan-zhi-xuan.jpg" alt=""><div><b>Tan Zhi Xuan</b><i>NUS</i></div></div>
+          <div class="sp"><img src="../images/speakers/zhengyuan-liu.jpg" alt=""><div><b>Zhengyuan Liu</b><i>A*STAR</i></div></div>
+        </div>
+      </li>
+      <li>
+        <div class="time">5:00 – 5:10<small>pm</small></div>
+        <div><div class="title">Closing Speech &amp; Photo-taking</div></div>
+        <div></div>
+      </li>
+      <li class="break">
+        <div class="time">5:10 – 6:00<small>pm</small></div>
+        <div><div class="title">Networking Reception</div></div>
+        <div></div>
+      </li>
+    </ol>
+  </main>
+
+  <footer>
+    <div class="venue"><b>Lorong AI @ one-north</b><span>69 Ayer Rajah Crescent, Level 3 Vidacity, Singapore 139961</span></div>
+    <div class="org"><a>aisafetysymposium.com</a>Organised by SASH · Supported by Lorong AI</div>
+  </footer>
+</div>
+</body>
+</html>
