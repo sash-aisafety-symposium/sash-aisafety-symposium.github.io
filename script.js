@@ -67,7 +67,7 @@
           isPlaceholder ? PERSON_ICON : esc(name.split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase())
         }</span>`;
     const inner = `${avatar}<span class="slot-speaker-text"><span class="slot-speaker-name">${esc(name)}</span>${
-      sp && sp.organisation ? `<span class="slot-speaker-org">${esc(sp.organisation)}</span>` : ""
+      sp && (sp.shortOrg || sp.organisation) ? `<span class="slot-speaker-org">${esc(sp.shortOrg || sp.organisation)}</span>` : ""
     }</span>`;
     return sp
       ? `<button type="button" class="slot-speaker is-link" data-i="${SPEAKERS.indexOf(sp)}" aria-label="About ${esc(name)}">${inner}</button>`
@@ -78,10 +78,14 @@
     (x) => `<li class="slot slot-${esc(x.kind)}">
       <p class="slot-time">${esc(x.start)} \u2013 ${esc(x.end)}</p>
       <div class="slot-main">
+        ${x.tag ? `<p class="slot-tag">${esc(x.tag)}</p>` : ""}
         <p class="slot-title">${esc(x.title)}</p>
         ${x.detail ? `<p class="slot-detail">${esc(x.detail)}</p>` : ""}
       </div>
-      ${speakerChip(x.speaker)}
+      ${(() => {
+        const names = x.speakers || (x.speaker ? [x.speaker] : []);
+        return names.length ? `<div class="slot-speakers">${names.map(speakerChip).join("")}</div>` : "";
+      })()}
     </li>`
   ).join("");
 

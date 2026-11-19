@@ -26,13 +26,14 @@ const RESEARCH = Array.from({ length: 18 }, (_, i) => ({
 /* Speakers.
    photo: image URL or path (e.g. "images/jane.jpg"). Leave "" to show initials.
    links: any of website / linkedin / github / x / scholar.
-   role: optional; replaces the "title at organisation" line under the name. */
+   role: optional; replaces the "title at organisation" line under the name.
+   shortOrg: optional short organisation name used in the schedule. */
 const SPEAKERS = [
-  { name: "Jess Bergs", title: "Engineering Lead", organisation: "UK AI Security Institute", photo: "images/speakers/jess-bergs.jpg" },
-  { name: "Zhengyuan Liu", title: "Team Lead", organisation: "A*STAR Centre for Frontier AI Research", photo: "images/speakers/zhengyuan-liu.jpg" },
-  { name: "Lukas Struppek", title: "Research Scientist", organisation: "FAR.AI", role: "Research Scientist at FAR.AI and mentor of SASH Fellowship", photo: "images/speakers/lukas-struppek.jpg" },
-  { name: "Shaun Khoo", title: "Staff Data Scientist", organisation: "GovTech Singapore", photo: "images/speakers/shaun-khoo.jpg" },
-  { name: "Tan Zhi Xuan", title: "Assistant Professor", organisation: "NUS Department of Computer Science", photo: "images/speakers/tan-zhi-xuan.jpg" },
+  { name: "Jess Bergs", title: "Engineering Lead", organisation: "UK AI Security Institute", shortOrg: "UK AI Security Institute", photo: "images/speakers/jess-bergs.jpg" },
+  { name: "Zhengyuan Liu", title: "Team Lead", organisation: "A*STAR Centre for Frontier AI Research", shortOrg: "A*STAR", photo: "images/speakers/zhengyuan-liu.jpg" },
+  { name: "Lukas Struppek", title: "Research Scientist", organisation: "FAR.AI", role: "Research Scientist at FAR.AI and mentor of SASH Fellowship", shortOrg: "FAR.AI", photo: "images/speakers/lukas-struppek.jpg" },
+  { name: "Shaun Khoo", title: "Staff Data Scientist", organisation: "GovTech Singapore", shortOrg: "GovTech", photo: "images/speakers/shaun-khoo.jpg" },
+  { name: "Tan Zhi Xuan", title: "Assistant Professor", organisation: "NUS Department of Computer Science", shortOrg: "NUS", photo: "images/speakers/tan-zhi-xuan.jpg" },
 ].map((s) => ({
   // TODO: replace placeholder bio and talk details for each speaker
   links: {},
@@ -44,22 +45,18 @@ const SPEAKERS = [
 
 /* Schedule.
    kind: "talk" | "fellows" | "session" | "break" (controls styling).
+   tag: optional small label above the title (e.g. "Invited talk").
    detail: optional second line under the title.
-   speaker: shown on the right. If it matches a name in SPEAKERS above, their photo
+   speakers: list of names shown on the right. If it matches a name in SPEAKERS above, their photo
    and organisation are filled in automatically. Leave out for no speaker. */
 const SCHEDULE = [
-  { start: "9:30am", end: "10:00am", title: "Registration", kind: "break" },
-  { start: "10:00am", end: "10:15am", title: "Welcome talk by SASH", detail: "About our fellowship and the research symposium", kind: "session" },
-  { start: "10:15am", end: "10:30am", title: "Singapore\u2019s role in the global AI safety ecosystem", kind: "session", speaker: "Speaker TBC" },
-  { start: "10:30am", end: "11:00am", title: "First Talk", kind: "talk", speaker: "Speaker 1" },
-  { start: "11:00am", end: "11:30am", title: "Second Talk", kind: "talk", speaker: "Speaker 2" },
-  { start: "11:30am", end: "12:00pm", title: "Third Talk", kind: "talk", speaker: "Speaker 3" },
-  { start: "12:00pm", end: "1:00pm", title: "Lunch + Poster session", kind: "break" },
-  { start: "1:00pm", end: "2:00pm", title: "Fellows\u2019 Research Presentations", kind: "fellows" },
-  { start: "2:00pm", end: "3:00pm", title: "Fellows\u2019 Research Presentations", kind: "fellows" },
-  { start: "3:00pm", end: "4:00pm", title: "Coffee break + Poster session", kind: "break" },
-  { start: "4:00pm", end: "4:30pm", title: "Fourth Talk", kind: "talk", speaker: "Speaker 4" },
-  { start: "4:30pm", end: "5:00pm", title: "Fifth Talk", kind: "talk", speaker: "Speaker 5" },
-  { start: "5:00pm", end: "5:30pm", title: "Sixth Talk", kind: "talk", speaker: "Speaker 6" },
-  { start: "5:30pm", end: "6:00pm", title: "Closing remarks and photo taking", kind: "session" },
+  { start: "12:00pm", end: "1:00pm", title: "AI Safety Research Showcase & Networking Lunch", kind: "break" },
+  { start: "1:00pm", end: "1:15pm", title: "Welcome Talk", kind: "session" },
+  { start: "1:15pm", end: "2:15pm", title: "Research Talks by Fellows", detail: "4 \u00d7 15-minute talks", kind: "fellows" },
+  { start: "2:15pm", end: "2:45pm", tag: "Invited talk", title: "Talk by Lukas Struppek", kind: "talk", speakers: ["Lukas Struppek"] },
+  { start: "2:45pm", end: "3:15pm", tag: "Invited talk", title: "Talk by Jess Bergs", kind: "talk", speakers: ["Jess Bergs"] },
+  { start: "3:15pm", end: "4:00pm", title: "AI Safety Research Showcase & Networking Coffee Break", kind: "break" },
+  { start: "4:00pm", end: "5:00pm", tag: "Presentations + panel", title: "AI Safety Research in Singapore", detail: "Presentations from three Singapore research groups, followed by a 30-minute panel discussion", kind: "talk", speakers: ["Shaun Khoo", "Tan Zhi Xuan", "Zhengyuan Liu"] },
+  { start: "5:00pm", end: "5:10pm", title: "Closing and Photo Taking", kind: "session" },
+  { start: "5:10pm", end: "6:00pm", title: "Networking Reception", kind: "break" },
 ];
